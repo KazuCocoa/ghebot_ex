@@ -1,7 +1,9 @@
 defmodule GhebotExTest do
   use ExUnit.Case
 
+  import GhebotEx
+
   test "the truth" do
-    assert 1 + 1 == 2
+    assert request == "opened"
   end
 end

@@ -28,7 +28,8 @@ defmodule GhebotEx.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:tentacat, "~> 0.2.0"}
+      {:tentacat, "~> 0.2.0"},
+      {:ex_parametarized, "~> 0.3.1"}
     ]
   end
 end
