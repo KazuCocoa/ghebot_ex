@@ -1,4 +1,4 @@
-GhebotEx
+MyBotEx
 ========
 
 ** TODO: Add description **

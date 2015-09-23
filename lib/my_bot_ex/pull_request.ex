@@ -1,4 +1,4 @@
-defmodule GhebotEx.PullRequest do
+defmodule MyBotEx.PullRequest do
   def action("opened"), do: "opened"
   def action("closed"), do: "closed"
   def action("reopened"), do: "reopened"

@@ -1,8 +1,8 @@
-defmodule GhebotEx do
-  @token Application.get_env :ghebot_ex, :token
+defmodule MyBotEx do
+  @token Application.get_env :my_bot_ex, :token
 
   alias Tentacat, as: TC
-  alias GhebotEx.PullRequest
+  alias MyBotEx.PullRequest
 
 
   def client(), do: TC.Client.new %{}

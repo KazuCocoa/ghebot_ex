@@ -22,7 +22,7 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 
-config :ghebot_ex,
+config :my_bot_ex,
   token: "sample"
 
 

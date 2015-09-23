@@ -1,8 +1,8 @@
-defmodule GhebotExTest.PullRequestTest do
+defmodule MyBotExTest.PullRequestTest do
   use ExUnit.Case, async: true
   use ExUnit.Parametarized
 
-  alias GhebotEx.PullRequest
+  alias MyBotEx.PullRequest
 
   test_with_params "check all actions",
     fn (act, expected) ->

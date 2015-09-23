@@ -1,7 +1,7 @@
-defmodule GhebotExTest do
+defmodule MyBotExTest do
   use ExUnit.Case
 
-  import GhebotEx
+  import MyBotEx
 
   test "the truth" do
     assert request == "opened"
