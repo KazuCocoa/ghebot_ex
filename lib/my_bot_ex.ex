@@ -1,11 +1,22 @@
 defmodule MyBotEx do
-  @token Application.get_env :my_bot_ex, :token
-
   alias Tentacat, as: TC
   alias MyBotEx.PullRequest
 
+  @token Application.get_env :my_bot_ex, :token
+  @endpoint Application.get_env :my_bot_ex, :endpoint
+
+  @type auth :: %{access_token: binary}
+  @type t :: Tentacat.Client{auth: auth, endpoint: binary}
+
+  @spec client() :: t
+  @spec client(:token) :: t
   def client, do: TC.Client.new %{}
   def client(:token), do: TC.Client.new %{access_token: @token}
+
+  @spec c_client :: t
+  @spec c_client(:token) :: t
+  def c_client, do: TC.Client.new %{}, @endpoint
+  def c_client(:token), do: TC.Client.new %{access_token: @token}, @endpoint
 
   def request do
     header = %{x_github_event: "pull_request"}
