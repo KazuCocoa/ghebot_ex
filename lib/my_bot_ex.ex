@@ -4,16 +4,10 @@ defmodule MyBotEx do
   alias Tentacat, as: TC
   alias MyBotEx.PullRequest
 
-
-  def client(), do: TC.Client.new %{}
+  def client, do: TC.Client.new %{}
   def client(:token), do: TC.Client.new %{access_token: @token}
 
-  def user(name), do: TC.Users.find(name)
-  def user(client, :me) when is_atom(:me), do: TC.Users.me(client)
-  def user(client, name) when is_bitstring(name), do: TC.Users.find(name, client)
-
-
-  def request() do
+  def request do
     header = %{x_github_event: "pull_request"}
     event(header.x_github_event)
   end
