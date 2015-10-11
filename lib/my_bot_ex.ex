@@ -1,4 +1,6 @@
 defmodule MyBotEx do
+  use Application
+
   alias Tentacat, as: TC
   alias MyBotEx.PullRequest
 
@@ -6,7 +8,11 @@ defmodule MyBotEx do
   @endpoint Application.get_env :my_bot_ex, :endpoint
 
   @type auth :: %{access_token: binary}
-  @type t :: Tentacat.Client{auth: auth, endpoint: binary}
+  @type t :: %Tentacat.Client{auth: auth, endpoint: binary}
+
+  def start(_type, _args) do
+    MyBotEx.Supervisor.start_link
+  end
 
   @spec client() :: t
   @spec client(:token) :: t

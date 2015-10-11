@@ -14,7 +14,10 @@ defmodule MyBotEx.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:tentacat]]
+    [
+      applications: [:tentacat, :slack],
+      mod: {MyBotEx, []}
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -29,6 +32,8 @@ defmodule MyBotEx.Mixfile do
   defp deps do
     [
       {:tentacat, "~> 0.2.0"},
+      {:slack, "~> 0.2"},
+      {:websocket_client, github: "jeremyong/websocket_client"},
       {:ex_parametarized, "~> 0.3.1"}
     ]
   end
