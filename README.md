@@ -3,6 +3,11 @@ MyBotEx
 
 My bot app implemented by Elixir.
 
+
+## Example
+
+![](https://raw.githubusercontent.com/KazuCocoa/my_bot_ex/master/doc/Screen%20Shot%202015-10-12%20at%2013.35.58.png)
+
 ## TODO
 
 - [ ] Use Supervisor
