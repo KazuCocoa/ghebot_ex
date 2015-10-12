@@ -1,15 +1,14 @@
 defmodule MyBotEx.Client.Slack do
   use Slack
 
+  alias MyBotEx.Client.Slack
   # alias MyBotEx.Client.Slack.Action, as: SlackAction
   alias MyBotEx.Client.Slack.Reporter, as: AppReporter
 
-  @droid_package Application.get_env :reporter, :droid_package
-  @droid_locale  Application.get_env :reporter, :droid_locale
-
-  @app_id Application.get_env :reporter, :app_id
-  @app_locale  Application.get_env :reporter, :app_locale
-
+  defstruct droid_package: Application.get_env(:reporter, :droid_package),
+            droid_locale:  Application.get_env(:reporter, :droid_locale),
+            app_id:        Application.get_env(:reporter, :app_id),
+            app_locale:    Application.get_env(:reporter, :app_locale)
 
   # TODO: Please check callback
   # https://github.com/BlakeWilliams/Elixir-Slack/blob/63eba17c53f68a99abd32ceb1c5d526065b02319/lib/slack.ex#L45
@@ -35,10 +34,10 @@ defmodule MyBotEx.Client.Slack do
   defp mentioned?(message, slack), do: String.starts_with?(message.text, "<@#{slack.me.id}>:")
 
   defp reply(:answer, message, slack) do
-    AppReporter.google_play_review(@droid_package, @droid_locale)
+    AppReporter.google_play_review(%Slack{}.droid_package, %Slack{}.droid_locale)
     |> Enum.each(&send_message(&1, message.channel, slack))
 
-    AppReporter.app_store_revew(@app_id, @app_locale)
+    AppReporter.app_store_revew(%Slack{}.app_id, %Slack{}.app_locale)
     |> Enum.each(&send_message(&1, message.channel, slack))
   end
   defp reply(:hear, message, slack),   do: send_message("Hello?", message.channel, slack)
