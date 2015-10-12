@@ -6,5 +6,9 @@ config :my_bot_ex,
   api_key: "xoxb-12298332852-SXjvQu4F8j6ruMU6s79Ih0mb" # my sample bot
 
 config :reporter,
+  droid_package: "com.android.chrome",
+  droid_locale: "en",
   get_count_google: 5,
+  app_id: "375380948",
+  app_locale: "en",
   get_count_apple: 5
