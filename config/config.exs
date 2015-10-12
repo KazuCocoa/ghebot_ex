@@ -1,31 +1,6 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
-
-# This configuration is loaded before any dependency and is restricted
-# to this project. If another project depends on this project, this
-# file won't be loaded nor affect the parent project. For this reason,
-# if you want to provide default values for your application for third-
-# party users, it should be done in your mix.exs file.
-
-# Sample configuration:
-#
-#     config :logger, :console,
-#       level: :info,
-#       format: "$date $time [$level] $metadata$message\n",
-#       metadata: [:user_id]
-
-# It is also possible to import configuration files, relative to this
-# directory. For example, you can emulate configuration per environment
-# by uncommenting the line below and defining dev.exs, test.exs and such.
-# Configuration from the imported file will override the ones defined
-# here (which is why it is important to import them last).
-#
 
 config :my_bot_ex,
   token: "431a9ce93c6a55ba024a63ac5c82e5786c14b437",
   endpoint: "https://api.github.com",
-  api_key: "xoxb-12289225846-RbDlTRCp5HxFjIX8OlPQensS" # my sample bot
-
-
-#     import_config "#{Mix.env}.exs"
+  api_key: "xoxb-12298332852-SXjvQu4F8j6ruMU6s79Ih0mb" # my sample bot
