@@ -34,7 +34,7 @@ defmodule MyBotEx.Mixfile do
       {:tentacat, "~> 0.2.0"},
       {:slack, "~> 0.2"},
       {:websocket_client, github: "jeremyong/websocket_client"},
-      {:reporter, "~> 0.2.5"},
+      {:reporter, "~> 0.2.6"},
       {:ex_parametarized, "~> 0.3.1"}
     ]
   end
