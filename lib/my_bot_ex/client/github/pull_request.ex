@@ -1,4 +1,4 @@
-defmodule MyBotEx.PullRequest do
+defmodule MyBotEx.Client.Github.PullRequest do
   def action("opened"), do: "opened"
   def action("closed"), do: "closed"
   def action("reopened"), do: "reopened"

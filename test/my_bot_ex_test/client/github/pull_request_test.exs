@@ -1,8 +1,8 @@
-defmodule MyBotExTest.PullRequestTest do
+defmodule MyBotExTest.Client.Github.PullRequestTest do
   use ExUnit.Case, async: true
   use ExUnit.Parametarized
 
-  alias MyBotEx.PullRequest
+  alias MyBotEx.Client.Github.PullRequest
 
   test_with_params "check all actions",
     fn (act, expected) ->

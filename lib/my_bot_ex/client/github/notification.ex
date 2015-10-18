@@ -1,4 +1,4 @@
-defmodule MyBotEx.Notification do
+defmodule MyBotEx.Client.Github.Notification do
   alias Tentacat, as: TC
 
   def notification(client), do: TC.get "notifications", client

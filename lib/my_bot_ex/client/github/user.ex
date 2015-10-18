@@ -1,4 +1,4 @@
-defmodule MyBotEx.User do
+defmodule MyBotEx.Client.Github.User do
   alias Tentacat, as: TC
 
   def user(name), do: TC.Users.find(name)
