@@ -1,5 +1,6 @@
 defmodule MyBotEx.Client.Slack.Action do
   use Slack
+  use Timex
 
   alias MyBotEx.Client.Slack.Action, as: SAction
   alias MyBotEx.Client.Slack.Reporter, as: AppReporter
@@ -19,6 +20,14 @@ defmodule MyBotEx.Client.Slack.Action do
     |> Enum.each(&send_message(&1, channel, slack))
   end
 
+  def reply("time", channel, slack) do
+    case Date.local |> DateFormat.format("{ISO}") do
+      {:ok, time} ->
+        send_message(time, channel, slack)
+      {:error, message} ->
+        send_message(message, channel, slack)
+    end
+  end
   def reply("hello", channel, slack), do: send_message("hello, I'm a bot.", channel, slack)
   def reply("help", channel, slack) do
     help_message = ~s"""
