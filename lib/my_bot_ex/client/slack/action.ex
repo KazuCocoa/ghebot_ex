@@ -20,6 +20,12 @@ defmodule MyBotEx.Client.Slack.Action do
     |> Enum.each(&send_message(&1, channel, slack))
   end
 
+  def reply("reviews", channel, slack) do
+    ["review android", "review ios"]
+    |> Enum.map(&(Task.async( fn -> reply(&1, channel, slack) end)))
+    |> Enum.map(&(Task.await/1))
+  end
+
   def reply("time", channel, slack) do
     case Date.local |> DateFormat.format("{ISO}") do
       {:ok, time} ->
