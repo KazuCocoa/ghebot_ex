@@ -15,4 +15,4 @@ My bot app implemented by Elixir.
 - [x] Post the notification to Slack(How many notifications are stored.)
 - [x] integration https://github.com/KazuCocoa/simple_app_reporter_ex
 - [x] Post the review of apps to Slack
-- [ ] Prepare interface which is hooked by other get request.
+- [ ] ~~Prepare interface which is hooked by other get request.~~ <= because support reply to Slack
