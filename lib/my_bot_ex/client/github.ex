@@ -1,4 +1,5 @@
 defmodule MyBotEx.Client.Github do
+  use GenServer
 
   alias Tentacat, as: TC
   alias MyBotEx.Client.Github.PullRequest
@@ -8,6 +9,15 @@ defmodule MyBotEx.Client.Github do
 
   @type auth :: %{access_token: binary}
   @type t :: %Tentacat.Client{auth: auth, endpoint: binary}
+
+  def start_link(default) do
+    GenServer.start_link __MODULE__, default, [name: __MODULE__]
+  end
+
+  def create_client(token \\ []) do
+    # send {xxx} to __MODULE__
+    GenServer.call __MODULE__, {:github_client, token}
+  end
 
   @spec client() :: t
   @spec client(:token) :: t
@@ -32,5 +42,17 @@ defmodule MyBotEx.Client.Github do
   # defp event("issues"), do: Issues.action "issues"
   # defp event("pull_request_review_comment"), do: PullRequestReviewComment.action "pull_request_review_comment"
   defp event("pull_request"), do: PullRequest.action "opened"
+
+  # server
+
+  # receive from `GenServer.call` to __MODULE__
+  def handle_call({:github_client, token}, _from, state) do
+    case token do
+      :token ->
+        {:reply, client(:token), state}
+      _ ->
+        {:reply, client, state}
+    end
+  end
 
 end
