@@ -7,7 +7,8 @@ defmodule MyBotEx.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     aliases: aliases]
   end
 
   # Configuration for the OTP application
@@ -18,6 +19,10 @@ defmodule MyBotEx.Mixfile do
       applications: [:tzdata, :tentacat, :slack],
       mod: {MyBotEx, []}
     ]
+  end
+
+  def aliases do
+    [bot: ["run --no-halt"]]
   end
 
   # Dependencies can be Hex packages:

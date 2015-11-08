@@ -16,3 +16,4 @@ My bot app implemented by Elixir.
 - [x] integration https://github.com/KazuCocoa/simple_app_reporter_ex
 - [x] Post the review of apps to Slack
 - [ ] ~~Prepare interface which is hooked by other get request.~~ <= because support reply to Slack
+- [ ] Add Twitter search with https://github.com/parroty/extwitter
