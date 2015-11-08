@@ -36,7 +36,7 @@ defmodule MyBotEx.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:tentacat, "~> 0.2.0"},
+      {:tentacat, "~> 0.2.1"},
       {:slack, "~> 0.2"},
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:reporter, "~> 0.2.6"},
