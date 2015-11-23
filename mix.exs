@@ -41,7 +41,7 @@ defmodule MyBotEx.Mixfile do
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:reporter, "~> 0.2.6"},
       {:timex, "~> 0.19.2"},
-      {:ex_parametarized, "~> 0.3.1", only: :test}
+      {:ex_parameterized, "~> 1.0", only: :test}
     ]
   end
 end

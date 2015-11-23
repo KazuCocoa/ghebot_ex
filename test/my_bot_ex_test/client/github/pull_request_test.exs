@@ -1,6 +1,6 @@
 defmodule MyBotExTest.Client.Github.PullRequestTest do
   use ExUnit.Case, async: true
-  use ExUnit.Parametarized
+  use ExUnit.Parameterized
 
   alias MyBotEx.Client.Github.PullRequest
 
