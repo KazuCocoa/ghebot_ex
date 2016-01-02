@@ -1,6 +1,8 @@
 defmodule MyBotEx.Supervisor do
   use Supervisor
 
+  alias MyBotEx.Client.{Slack, Github}
+
   def start_link do
     Supervisor.start_link __MODULE__, [], [name: __MODULE__]
   end
@@ -11,8 +13,8 @@ defmodule MyBotEx.Supervisor do
     api_key = Application.get_env :my_bot_ex, :api_key
 
     children = [
-      worker(MyBotEx.Client.Slack, [api_key, [name: MyBotEx.Client.Slack]]),
-      worker(MyBotEx.Client.Github, [[name: MyBotEx.Client.Github]])
+      worker(Slack, [api_key, [name: Slack]]),
+      worker(Github, [[name: Github]])
     ]
 
     supervise children, strategy: :one_for_one
