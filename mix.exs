@@ -37,7 +37,7 @@ defmodule MyBotEx.Mixfile do
   defp deps do
     [
       {:tentacat, "~> 0.3.0"},
-      {:slack, github: "KazuCocoa/Elixir-Slack", branch: "update_httpoison"},
+      {:slack, "~> 0.4.0"},
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:reporter, "~> 0.3.2"},
       {:timex, "~> 1.0"},

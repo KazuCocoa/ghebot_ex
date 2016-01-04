@@ -14,7 +14,7 @@
   "poison": {:hex, :poison, "1.5.0"},
   "quinn": {:hex, :quinn, "0.0.4"},
   "reporter": {:hex, :reporter, "0.3.3"},
-  "slack": {:git, "https://github.com/KazuCocoa/Elixir-Slack.git", "6660650e3bf3f682a2bcb56d8c5ea02934c68ea9", [branch: "update_httpoison"]},
+  "slack": {:hex, :slack, "0.4.0"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
   "tentacat": {:hex, :tentacat, "0.3.0"},
   "timex": {:hex, :timex, "1.0.0"},
