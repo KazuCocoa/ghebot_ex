@@ -3,9 +3,7 @@ defmodule MyBotEx.Supervisor do
 
   alias MyBotEx.Client.{Slack, Github}
 
-  def start_link do
-    Supervisor.start_link __MODULE__, [], [name: __MODULE__]
-  end
+  def start_link, do: Supervisor.start_link __MODULE__, [], [name: __MODULE__]
 
   def init([]) do
     import Supervisor.Spec

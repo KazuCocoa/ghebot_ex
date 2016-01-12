@@ -10,14 +10,9 @@ defmodule MyBotEx.Client.Github do
   @type auth :: %{access_token: binary}
   @type t :: %Tentacat.Client{auth: auth, endpoint: binary}
 
-  def start_link(default) do
-    GenServer.start_link __MODULE__, default, [name: __MODULE__]
-  end
+  def start_link(default), do: GenServer.start_link __MODULE__, default, [name: __MODULE__]
 
-  def create_client(token \\ []) do
-    # send {xxx} to __MODULE__
-    GenServer.call __MODULE__, {:github_client, token}
-  end
+  def create_client(token \\ []), do: GenServer.call __MODULE__, {:github_client, token}
 
   @spec client() :: t
   @spec client(:token) :: t

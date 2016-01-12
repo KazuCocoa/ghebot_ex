@@ -7,10 +7,7 @@ defmodule MyBotEx.Client.Slack do
   # TODO: Please check callback
   # https://github.com/BlakeWilliams/Elixir-Slack/blob/63eba17c53f68a99abd32ceb1c5d526065b02319/lib/slack.ex#L45
 
-  def handle_connect(slack, state) do
-    # After establish connection
-    {:ok, state}
-  end
+  def handle_connect(slack, state), do: {:ok, state}
 
   def handle_message(message = %{type: "message"}, slack, state) do
     case mentioned?(message, slack) do
