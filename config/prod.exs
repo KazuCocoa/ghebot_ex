@@ -6,4 +6,4 @@ config :my_bot_ex,
   api_key: System.get_env("BOT_TOKEN")
 
 config :revision_plate_ex,
-  http_port: {:system, "PORT"},
+  http_port: System.get_env("PORT")
