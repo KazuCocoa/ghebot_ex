@@ -16,7 +16,7 @@ defmodule MyBotEx.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [
-      applications: [:tzdata, :tentacat, :slack],
+      applications: [:tzdata, :tentacat, :slack, :revision_plate_ex],
       mod: {MyBotEx, []}
     ]
   end
@@ -41,6 +41,7 @@ defmodule MyBotEx.Mixfile do
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:reporter, "~> 0.3.2"},
       {:timex, "~> 1.0"},
+      {:revision_plate_ex, "~> 0.1.0"},
       {:current_streak_ex, "~> 0.1"},
       {:ex_parameterized, "~> 1.0", only: :test}
     ]
