@@ -5,6 +5,7 @@ defmodule MyBotEx.Client.Slack.Action do
   alias MyBotEx.Client.Slack.Action, as: SAction
   alias MyBotEx.Client.Slack.Reporter, as: AppReporter
   alias MyBotEx.Client.Github.User, as: GithubUser
+  alias MyBotEx.Client.Github.Trend, as: GithubTrend
 
   defstruct droid_package: Application.get_env(:reporter, :droid_package),
             droid_locale:  Application.get_env(:reporter, :droid_locale),
@@ -15,6 +16,18 @@ defmodule MyBotEx.Client.Slack.Action do
     streak = GithubUser.streak("KazuCocoa")
     "current streak is #{Integer.to_string(streak)}"
     |> send_message(channel, slack)
+  end
+
+  def reply("trend", channel, slack) do
+    message = GithubTrend.list
+              |> Enum.reduce("", fn trend_item, acc ->
+                acc <> ~s"""
+                #{trend_item.name} : #{trend_item.url}
+                #{trend_item.description}
+                ++++++++++
+                """
+              end)
+    send_message(message, channel, slack)
   end
 
   def reply("review android", channel, slack) do
