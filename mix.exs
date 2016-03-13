@@ -43,6 +43,7 @@ defmodule MyBotEx.Mixfile do
       {:timex, "~> 1.0"},
       {:revision_plate_ex, "~> 0.1.0"},
       {:current_streak_ex, "~> 0.1"},
+      {:github_trend_ex, "~> 0.1"},
       {:ex_parameterized, "~> 1.0", only: :test}
     ]
   end
