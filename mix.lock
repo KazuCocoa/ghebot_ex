@@ -8,7 +8,7 @@
   "feeder": {:hex, :feeder, "1.4.7"},
   "feeder_ex": {:hex, :feeder_ex, "0.0.2"},
   "floki": {:hex, :floki, "0.8.0"},
-  "github_trend_ex": {:hex, :github_trend_ex, "0.1.1"},
+  "github_trend_ex": {:hex, :github_trend_ex, "0.1.2"},
   "hackney": {:hex, :hackney, "1.4.10"},
   "httpoison": {:hex, :httpoison, "0.8.1"},
   "idna": {:hex, :idna, "1.1.0"},
