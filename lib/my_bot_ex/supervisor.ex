@@ -14,7 +14,7 @@ defmodule MyBotEx.Supervisor do
     children = [
       worker(Slack, [api_key, [name: Slack]]),
       worker(Github, [[name: Github]]),
-      worker(Router, [[port: 4000]])
+      worker(Router, [[port: System.get_env("PORT")]])
     ]
 
     supervise children, strategy: :one_for_one
