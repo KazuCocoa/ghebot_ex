@@ -2,6 +2,7 @@ defmodule MyBotEx.Supervisor do
   use Supervisor
 
   alias MyBotEx.Client.{Slack, Github}
+  alias MyBotEx.Router
 
   def start_link, do: Supervisor.start_link __MODULE__, [], [name: __MODULE__]
 
@@ -12,7 +13,8 @@ defmodule MyBotEx.Supervisor do
 
     children = [
       worker(Slack, [api_key, [name: Slack]]),
-      worker(Github, [[name: Github]])
+      worker(Github, [[name: Github]]),
+      worker(Router, [[port: 4000]])
     ]
 
     supervise children, strategy: :one_for_one

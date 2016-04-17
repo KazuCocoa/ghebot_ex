@@ -59,6 +59,10 @@ defmodule MyBotEx.Client.Slack.Action do
     help_message = ~s"""
     "review android": reply the result of review for Google Play
     "review ios": reply the result of review for App Store
+    "reviews": reply all reviews for Google Play / App Store
+    "my streak": reply the current streak of GitHub
+    "trend": reply the trend from GitHub
+    "time": reply the current time
     """
     send_message(help_message, channel, slack)
   end

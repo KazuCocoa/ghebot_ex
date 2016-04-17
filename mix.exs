@@ -16,7 +16,7 @@ defmodule MyBotEx.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [
-      applications: [:tzdata, :tentacat, :slack, :revision_plate_ex],
+      applications: [:tzdata, :tentacat, :slack],
       mod: {MyBotEx, []}
     ]
   end
