@@ -8,6 +8,12 @@ My bot app implemented by Elixir.
 
 ![](https://raw.githubusercontent.com/KazuCocoa/my_bot_ex/master/doc/Screen%20Shot%202015-10-12%20at%2013.35.58.png)
 
+
+## linebot
+- use https://elements.heroku.com/addons/fixie to set static
+- set static ip for whitlist
+    - https://developers.line.me/channels/ip/your_developer_id
+
 ## TODO
 
 - [x] Use Supervisor
