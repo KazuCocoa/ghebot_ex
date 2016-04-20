@@ -11,8 +11,11 @@ defmodule MyBotEx.Supervisor do
 
     api_key = Application.get_env :my_bot_ex, :api_key
 
-    port = System.get_env "PORT"
-    if !is_integer(port), do: port = String.to_integer(port)
+    port = case System.get_env "PORT" do
+             p when p == nil -> nil
+             p when not is_integer(p) -> String.to_integer(p)
+             p -> p
+           end
 
     children = [
       worker(Slack, [api_key, [name: Slack]]),
