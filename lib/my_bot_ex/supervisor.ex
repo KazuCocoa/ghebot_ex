@@ -12,7 +12,7 @@ defmodule MyBotEx.Supervisor do
     api_key = Application.get_env :my_bot_ex, :api_key
 
     port = case System.get_env "PORT" do
-             p when p == nil -> nil
+             p when p == nil -> 4000
              p when not is_integer(p) -> String.to_integer(p)
              p -> p
            end

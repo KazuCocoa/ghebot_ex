@@ -18,18 +18,6 @@ defmodule MyBotEx.Client.Slack.Action do
     |> send_message(channel, slack)
   end
 
-  def reply("trend", channel, slack) do
-    message = GithubTrend.list
-              |> Enum.reduce("", fn trend_item, acc ->
-                acc <> ~s"""
-                #{trend_item.name} : #{trend_item.url}
-                #{trend_item.description}
-                ++++++++++
-                """
-              end)
-    send_message(message, channel, slack)
-  end
-
   def reply("review android", channel, slack) do
     AppReporter.google_play_review(%SAction{}.droid_package, %SAction{}.droid_locale)
     |> Enum.each(&send_message(&1, channel, slack))
@@ -66,5 +54,28 @@ defmodule MyBotEx.Client.Slack.Action do
     """
     send_message(help_message, channel, slack)
   end
-  def reply(_, channel, slack), do: send_message("I have no response. Please see help.", channel, slack)
+
+  def reply(word, channel, slack) do
+    [h|t] = String.split word, ~r/\s/
+
+    case h do
+      "trend" -> reply_trend(t, channel, slack)
+      _ -> send_message("I have no response. Please see help.", channel, slack)
+    end
+  end
+
+  defp reply_trend([], channel, slack), do: send_message("finish trending", channel, slack)
+  defp reply_trend([head|tail], channel, slack) do
+    message = head
+              |> GithubTrend.list
+              |> Enum.reduce("", fn trend_item, acc ->
+                acc <> ~s"""
+                trend of #{head} : #{trend_item.name} : #{trend_item.url}
+                #{trend_item.description}
+                ++++++++++
+                """
+              end)
+    send_message(message, channel, slack)
+    reply_trend(tail, channel, slack)
+  end
 end
