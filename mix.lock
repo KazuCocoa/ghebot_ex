@@ -8,6 +8,7 @@
   "feeder": {:hex, :feeder, "1.4.7"},
   "feeder_ex": {:hex, :feeder_ex, "0.0.2"},
   "floki": {:hex, :floki, "0.8.0"},
+  "gettext": {:hex, :gettext, "0.11.0"},
   "github_trend_ex": {:hex, :github_trend_ex, "0.1.2"},
   "hackney": {:hex, :hackney, "1.6.0"},
   "httpoison": {:hex, :httpoison, "0.8.3"},
@@ -27,6 +28,6 @@
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.0"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
   "tentacat": {:hex, :tentacat, "0.3.0"},
-  "timex": {:hex, :timex, "1.0.2"},
+  "timex": {:hex, :timex, "2.1.4"},
   "tzdata": {:hex, :tzdata, "0.5.7"},
   "websocket_client": {:git, "https://github.com/jeremyong/websocket_client.git", "f6892c8b55004008ce2d52be7d98b156f3e34569", []}}
