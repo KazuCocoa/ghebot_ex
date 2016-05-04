@@ -12,6 +12,8 @@ defmodule MyBotEx.Client.Slack.Action do
             app_id:        Application.get_env(:reporter, :app_id),
             app_locale:    Application.get_env(:reporter, :app_locale)
 
+  @timezone "Asia/Tokyo"
+
   def reply("my streak", channel, slack) do
     streak = GithubUser.streak("KazuCocoa")
     "current streak is #{Integer.to_string(streak)}"
@@ -35,7 +37,7 @@ defmodule MyBotEx.Client.Slack.Action do
   end
 
   def reply("time", channel, slack) do
-    case Timex.DateTime.local |> Timex.format("{ISO}") do
+    case Timex.DateTime.local |> Timex.Timezone.convert(@timezone) |> Timex.format("{ISO}") do
       {:ok, time} ->
         send_message(time, channel, slack)
       {:error, message} ->
