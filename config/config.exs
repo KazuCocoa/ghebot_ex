@@ -8,4 +8,6 @@ config :reporter,
   app_locale: "en",
   get_count_apple: 5
 
+config :timex, default_locale: "jp"
+
 import_config "#{Mix.env}.exs"
