@@ -22,7 +22,7 @@
   "poison": {:hex, :poison, "2.1.0", "f583218ced822675e484648fa26c933d621373f01c6c76bd00005d7bd4b82e27", [:mix], []},
   "quinn": {:hex, :quinn, "0.0.4"},
   "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []},
-  "reporter": {:hex, :reporter, "0.4.3", "296eb10a082462e5ae854c8c3bdc6acdc811ad7dff2f1556496c58a7f21bc1cd", [:mix], [{:poison, "~> 2.0", [hex: :poison, optional: false]}, {:httpoison, "~> 0.8", [hex: :httpoison, optional: false]}, {:floki, "~> 0.8", [hex: :floki, optional: false]}, {:feeder_ex, "~> 0.0.2", [hex: :feeder_ex, optional: false]}]},
+  "reporter": {:hex, :reporter, "0.5.0", "92ffab1e0a344f26ac7572787551845b4d2b308a938da8a59dce268b2fe24218", [:mix], [{:poison, "~> 2.0", [hex: :poison, optional: false]}, {:httpoison, "~> 0.8", [hex: :httpoison, optional: false]}, {:floki, "~> 0.8", [hex: :floki, optional: false]}, {:feeder_ex, "~> 0.0.2", [hex: :feeder_ex, optional: false]}]},
   "revision_plate_ex": {:hex, :revision_plate_ex, "0.1.0", "ce19f6f47238725f9d8bf35815c6b98c70a8ad8cd70e9eb61ddb1873043d1a02", [:mix], [{:plug, "~> 1.0", [hex: :plug, optional: false]}, {:cowboy, "~> 1.0.0", [hex: :cowboy, optional: false]}]},
   "slack": {:hex, :slack, "0.4.2", "ae23da58e702979731d13d90e3bd0cdd5f44fbca7166eac635a8163a640bd382", [:mix], [{:httpoison, "~> 0.8.0", [hex: :httpoison, optional: false]}, {:exjsx, "~> 3.1.0", [hex: :exjsx, optional: false]}]},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.0", "edee20847c42e379bf91261db474ffbe373f8acb56e9079acb6038d4e0bf414f", [:rebar, :make], []},
