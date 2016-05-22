@@ -39,7 +39,7 @@ defmodule MyBotEx.Mixfile do
       {:tentacat, "~> 0.3"},
       {:slack, "~> 0.4.0"},
       {:websocket_client, github: "jeremyong/websocket_client"},
-      {:reporter, "~> 0.5"},
+      {:reporter, "~> 0.5.1"},
       {:timex, "~> 2.0"},
       {:revision_plate_ex, "~> 0.1.0"},
       {:current_streak_ex, "~> 0.1"},
