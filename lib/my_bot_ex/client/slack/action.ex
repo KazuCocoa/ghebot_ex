@@ -37,12 +37,9 @@ defmodule MyBotEx.Client.Slack.Action do
   end
 
   def reply("time", channel, slack) do
-    case Timex.DateTime.local |> Timex.Timezone.convert(@timezone) |> Timex.format("{ISO}") do
-      {:ok, time} ->
-        send_message(time, channel, slack)
-      {:error, message} ->
-        send_message(message, channel, slack)
-    end
+    Timex.local
+    |> Timex.Timezone.convert(@timezone)
+    |> send_message(channel, slack)
   end
   def reply("hello", channel, slack), do: send_message("hello, I'm a bot.", channel, slack)
   def reply("help", channel, slack) do
