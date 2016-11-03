@@ -40,7 +40,7 @@ defmodule MyBotEx.Mixfile do
       {:slack, "~> 0.5.0"},
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:reporter, "~> 0.6.0"},
-      {:timex, "~> 2.0"},
+      {:timex, "~> 3.0"},
       {:certifi, "~> 0.4.0"},
       {:revision_plate_ex, "~> 0.2"},
       {:current_streak_ex, "~> 0.1"},
