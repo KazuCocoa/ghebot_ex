@@ -37,9 +37,8 @@ defmodule MyBotEx.Mixfile do
   defp deps do
     [
       {:tentacat, "~> 0.5"},
-      {:slack, "~> 0.5.0"},
-      {:websocket_client, github: "jeremyong/websocket_client"},
-      {:reporter, "~> 0.6.0"},
+      {:slack, "~> 0.8.0"},
+      {:reporter, "~> 0.6.3"},
       {:timex, "~> 3.0"},
       {:certifi, "~> 0.4.0"},
       {:revision_plate_ex, "~> 0.2"},
